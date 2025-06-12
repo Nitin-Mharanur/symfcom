@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS product_variants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    color VARCHAR(50),
+    size VARCHAR(50),
+    stock INT NOT NULL DEFAULT 0,
+    price DECIMAL(10,2),
+    sku VARCHAR(100) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);
