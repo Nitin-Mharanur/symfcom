@@ -11,3 +11,9 @@ services:
             $dsn: '%env(resolve:DATABASE_DSN)%'
             $user: '%env(resolve:DATABASE_USER)%'
             $password: '%env(resolve:DATABASE_PASSWORD)%'
+
+    # ✅ Register Controllers Properly
+    App\Controller\:
+        resource: '../src/Controller/'
+        public: true
+        tags: ['controller.service_arguments']
